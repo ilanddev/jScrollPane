@@ -131,7 +131,7 @@
 
 					elem.width(paneWidth);
 
-					pane = $('<div class="jspPane" />').css('padding', originalPadding).append(elem.children());
+					pane = $('<div class="jspPane" />').css('padding', originalPadding).append(elem.contents());
 					container = $('<div class="jspContainer" />')
 						.css({
 							'width': paneWidth + 'px',
@@ -1255,7 +1255,7 @@
 					currentX = contentPositionX();
 				elem.removeClass('jspScrollable').unbind('.jsp');
 				pane.unbind('.jsp');
-				elem.replaceWith(originalElement.append(pane.children()));
+				elem.replaceWith(originalElement.append(pane.contents()));
 				originalElement.scrollTop(currentY);
 				originalElement.scrollLeft(currentX);
 
